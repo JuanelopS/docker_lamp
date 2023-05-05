@@ -1,4 +1,3 @@
-
 <h2 class="subtitle">
     Login
 </h2>
@@ -13,7 +12,7 @@
 
 <?php
 
-if(isset($_POST)){
+if(isset($_POST['user'])){
     echo "El usuario introducido es " . $_POST['user'];
     echo " y su contraseña es " . $_POST['password'];
 }
