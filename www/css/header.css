@@ -8,3 +8,12 @@
   list-style: none;
   min-height: 5vh;
 }
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    font-weight: bolder;
+}
