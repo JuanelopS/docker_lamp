@@ -1,0 +1,10 @@
+/* TODO: STICKY NAV */
+
+.header-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  list-style: none;
+  min-height: 5vh;
+}
