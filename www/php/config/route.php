@@ -23,6 +23,12 @@ case '/about':
 require $_SERVER['DOCUMENT_ROOT'] . '/views/about.php';
 break;
 
+case '/register_user':
+require $_SERVER['DOCUMENT_ROOT'] . '/php/database/user_register.php';
+break;
+
+
+
 default:
 http_response_code(404);
 require $_SERVER['DOCUMENT_ROOT'] . '/views/404.php';
