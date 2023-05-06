@@ -1,10 +1,3 @@
-<?php
-
-include($_SERVER['DOCUMENT_ROOT'] . '/php/config/constants.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/php/config/functions.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
