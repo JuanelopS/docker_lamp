@@ -1,5 +1,7 @@
 <?php
 
+/* DATABASE VARIABLES */
+
 $servername = DB_SERVER;
 $user_db = DB_USER;
 $pass_db = DB_PASSWORD;
