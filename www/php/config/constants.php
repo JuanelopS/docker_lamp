@@ -1,7 +1,8 @@
 <?php
 
-define('TITLE', 'Bienvenido');
+/* HOST CONSTANTS */
 
+define('HOST', 'http://localhost');
 
 /* DATABASE CONSTANTS */
 

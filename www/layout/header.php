@@ -7,7 +7,9 @@
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/footer.css" rel="stylesheet">
-    <title><?php echo TITLE; ?></title>
+    <title>
+        <?php echo isset($_SESSION['name']) ? "Welcome " . $_SESSION['name'] : "Welcome.." ?>
+    </title>
 </head>
 <body>
     <header>
@@ -15,7 +17,12 @@
             <ul class="header-list">
                 <li>Logo</li>
                 <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
+                <?php 
+                echo isset($_SESSION['name']) ? 
+                    "<li><a href='/logout'>Logout</a></li>"
+                    :
+                    "<li><a href='/login'>Login</a></li>"
+                ?>
                 <li><a href="/register">Register</a></li>
                 <li><a href="/about">About</a></li>
             </ul>

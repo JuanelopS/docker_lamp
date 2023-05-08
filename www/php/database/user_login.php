@@ -29,9 +29,18 @@ try {
 
     // login result
     if($count !== 0){
-        echo "Welcome " . $result['name'];
-
+        
         /* TODO: SAVE SESSION / COOKIE HERE + REDIRECTION TO HOME */
+        
+        foreach ($result as $key => $value) {
+            if($key !== 'password'){   //not save password to sessions
+                $_SESSION[$key] = $result[$key];
+            }
+        }
+        
+        include($_SERVER['DOCUMENT_ROOT'] . '/layout/loading.php');
+        wait_spinning('Login successfully, now loading...'); //fake loading
+
     } else  {
         echo "Incorrect e-mail and/or password";
 
