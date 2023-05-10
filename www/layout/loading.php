@@ -16,5 +16,9 @@ function wait_spinning($msg = ''){
             wait();
         </script>
     ";
+
+    /* FIXME: FIX HEADERS WARNINGS.... */
+    header("Location: " . HOST);
+    die();
 }
 

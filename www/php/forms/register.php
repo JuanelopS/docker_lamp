@@ -6,7 +6,7 @@
 
 <form action="/register_user" method="post" class="form">
     <label for="email">Email</label>
-    <input type="email" name="email" id="input-email" required>
+    <input type="email" name="email" id="input-email" required autofocus>
     <label for="password">Password</label>
     <input type="password" name="password" id="input-password" required>
     <label for="user">Name</label>

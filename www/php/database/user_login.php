@@ -1,5 +1,10 @@
 <?php
 
+// load view
+include($_SERVER['DOCUMENT_ROOT'] . '/layout/header.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/layout/loading.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/layout/footer.php');
+
 /* DATABASE VARIABLES */
 
 $servername = DB_SERVER;
@@ -24,9 +29,6 @@ try {
     $result = $stmt->fetch();
     $count = $stmt->rowCount(); // if query returns > 0 columns: login ok!
 
-    // load view
-    include($_SERVER['DOCUMENT_ROOT'] . '/layout/header.php');
-
     // login result
     if($count !== 0){
         
@@ -38,7 +40,6 @@ try {
             }
         }
         
-        include($_SERVER['DOCUMENT_ROOT'] . '/layout/loading.php');
         wait_spinning('Login successfully, now loading...'); //fake loading
 
     } else  {
@@ -47,7 +48,7 @@ try {
         /* TODO: COUNT ERROR NUMBER FOR BLOCK ACCOUNT */
     }
 
-    include($_SERVER['DOCUMENT_ROOT'] . '/layout/footer.php');
+    
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
