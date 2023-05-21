@@ -1,3 +1,11 @@
+<?php
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +16,7 @@
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/footer.css" rel="stylesheet">
     <title>
-        <?php echo isset($_SESSION['name']) ? "Welcome " . $_SESSION['name'] : "Welcome.." ?>
+        <?php echo isset($_SESSION['name']) ? "Welcome " . $_SESSION['name'] : "Welcome..." ?>
     </title>
 </head>
 <body>

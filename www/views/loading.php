@@ -4,7 +4,12 @@
 
 /* TODO: ADD CSS SPINNER, EXPLORE BETTER OPTIONS FOR THIS... */
 
-function wait_spinning($msg = ''){
+/**
+ * Redirect login/logout
+ */
+function wait_spinning($msg = 'Please wait...'){
+
+    include($_SERVER['DOCUMENT_ROOT'] . '/layout/header.php');
     echo "
         <script>
             let main = document.querySelector('main');
@@ -12,13 +17,11 @@ function wait_spinning($msg = ''){
             let wait = () => setTimeout(() => {
                 window.location.href = '" . HOST . "';
                 console.log('$msg');
-            }, 5000);
+            }, 3000);
             wait();
         </script>
     ";
+    include($_SERVER['DOCUMENT_ROOT'] . '/layout/footer.php');
 
-    /* FIXME: FIX HEADERS WARNINGS.... */
-    header("Location: " . HOST);
-    die();
 }
 

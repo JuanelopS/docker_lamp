@@ -1,9 +1,6 @@
 <?php
 
-// load view
-include($_SERVER['DOCUMENT_ROOT'] . '/layout/header.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/layout/loading.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/layout/footer.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/views/loading.php');
 
 /* DATABASE VARIABLES */
 
@@ -25,26 +22,25 @@ try {
     // prepare/execute/fetch query
     $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
     $stmt = $conn->prepare($sql);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute(['email' => $email, 'password' => $password]);
     $result = $stmt->fetch();
     $count = $stmt->rowCount(); // if query returns > 0 columns: login ok!
 
     // login result
     if($count !== 0){
-        
+
         /* TODO: SAVE SESSION / COOKIE HERE + REDIRECTION TO HOME */
-        
+        session_start();
         foreach ($result as $key => $value) {
             if($key !== 'password'){   //not save password to sessions
-                $_SESSION[$key] = $result[$key];
+                $_SESSION[$key] = $value;
             }
         }
-        
-        wait_spinning('Login successfully, now loading...'); //fake loading
+        wait_spinning('Login successfully, now loading...');
 
     } else  {
-        echo "Incorrect e-mail and/or password";
-
+        wait_spinning("Incorrect e-mail and/or password");
         /* TODO: COUNT ERROR NUMBER FOR BLOCK ACCOUNT */
     }
 
